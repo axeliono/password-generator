@@ -5,12 +5,14 @@ var generatePassword = function() {
   console.log(personInput);
   var passwordLength = 0;
   var checker = /[^0-9]/g;
-  console.log(personInput.match(checker));
-  //var invalidInput = personInput.match(checker);
-    //if(personInput.match(checker)) {
-      //window.alert("Your criteria is invalid, choose a viable length.");
-      //generatePassword();
-    //}
+
+  console.log(isNaN(personInput));
+    if(isNaN(personInput)) {
+      window.alert("Your criteria is invalid, choose a viable number.");
+      generatePassword();
+    }
+
+    passwordLength = parseInt(personInput);
     if(passwordLength > 128 || passwordLength < 8) {
       window.alert("Your criteria is invalid, choose a viable length.");
       generatePassword();
